@@ -61,11 +61,11 @@ const Order = () => {
                                 class="form-control" name="name" placeholder="Your name / company's name" />
                         </div>
                         <div class="form-group">
-                            <input type="email"
+                            {loggedInUser && <input type="email"
                                 onBlur={handleBlur}
                                 class="form-control" name="email"
-                                //  value={loggedInUser.email}
-                                placeholder="Your email address" />
+                                value={loggedInUser.email}
+                                placeholder="Your email address" />}
                         </div>
                         <div class="form-group">
                             <input type="text"
