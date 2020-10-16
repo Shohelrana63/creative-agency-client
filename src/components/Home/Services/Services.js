@@ -35,7 +35,7 @@ const Services = () => {
                 <div className="secction-header text-center mt-5">
                     <h1>Provide awesome <span className="text-success"> services</span></h1>
                 </div>
-                <div className="card-deck mt-5">
+                <div className="row mt-5">
                     {
                         service.map(service => <ServiceDetails
                             service={service}

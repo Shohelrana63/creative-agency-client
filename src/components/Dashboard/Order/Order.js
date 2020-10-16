@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import icon from '../../../images/cloudUpload.png';
 import './Order.css';
 import Sidebar from '../Sidebar/Sidebar';
+import { UserContext } from '../../../App';
 const Order = () => {
-
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [order, setOrder] = useState({});
     const [file, setFile] = useState(null);
     const handleBlur = e => {
@@ -45,9 +46,13 @@ const Order = () => {
             <div className="col-md-4">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-md-5 ">
+            <div className="col-md-7">
                 <div className="col-md-10" >
-                    <h5 className="mb-5 pt-4 pb-5 pl-2">Order</h5>
+                    <div className="d-flex justify-content-between">
+                        <h5 className="mb-5 pt-4 pb-5 pl-2">Order</h5>
+                        <h6 style={{ marginTop: '15px' }}>{loggedInUser.name}</h6>
+                    </div>
+
                     <form onSubmit={handleSubmit}
                         style={{ position: "absolute", marginRight: '20px', backgroundColor: "#F4FDFB" }}>
                         <div class="form-group">

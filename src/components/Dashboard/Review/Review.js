@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import icon from '../../../images/cloudUpload.png';
 import './Review.css';
+import { UserContext } from '../../../App';
 const Review = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [review, setReview] = useState({});
     const [file, setFile] = useState(null);
     console.log(review);
@@ -38,9 +40,13 @@ const Review = () => {
             <div className="col-md-4">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-md-5 ">
+            <div className="col-md-7 ">
                 <div className="col-md-10 " >
-                    <h5 className="mb-5 pt-4 pb-5 pl-2">Order</h5>
+                    <div className="d-flex justify-content-between">
+                        <h5 className="mb-5 pt-4 pb-5 pl-2">Order</h5>
+                        <h6 style={{ marginTop: '15px' }}>{loggedInUser.name}</h6>
+                    </div>
+                    {/* <h5 className="mb-5 pt-4 pb-5 pl-2">Order</h5> */}
 
                     <form onSubmit={handleReviewSubmit} style={{ position: "absolute", marginRight: '20px', backgroundColor: "#F4FDFB" }}>
                         <div class="form-group d-flex">

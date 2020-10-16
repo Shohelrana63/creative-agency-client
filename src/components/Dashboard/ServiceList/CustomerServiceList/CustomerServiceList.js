@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../../App';
 import service1 from '../../../../images/icons/service1.png';
 import service2 from '../../../../images/icons/service2.png';
 import service3 from '../../../../images/icons/service3.png';
@@ -19,6 +20,7 @@ const CustomerServiceList = () => {
     //         status: 'pending'
     //     }
     // ]
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
@@ -28,8 +30,11 @@ const CustomerServiceList = () => {
     }, [])
     return (
         <div style={{ marginTop: '10px', marginBottom: '10px' }}>
-            <h4 className='mt-4 ml-5'>Service List</h4>
-            <div className="card-deck mt-5">
+            <div className="d-flex justify-content-between">
+                <h4>Service List</h4>
+                <h6>{loggedInUser.name}</h6>
+            </div>
+            <div className="row mt-5">
                 {
                     orders.map(serviceOrder => <CustomerServiceDetails
                         serviceOrder={serviceOrder}
