@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import './ServiceDetails.css';
 const ServiceDetails = ({ service }) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const handleService = (service) => {
+        console.log(service);
+        const fetchService = { ...loggedInUser, service };
+        setLoggedInUser(fetchService);
+    }
 
     return (
         <div className="col-md-4 d-flex justify-content-center">
             <div style={{ width: "18rem" }} className="card animation shadow-sm mt-5">
-                <Link style={{ textDecoration: 'none' }}
+                <Link onClick={() => handleService(service)} style={{ textDecoration: 'none' }}
                     to='/addOrder'>
                     <div className="card-header d-flex">
                         {/* <img className="mx-auto" src={img} alt="" width="74" /> */}

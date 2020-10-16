@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
 const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(loggedInUser);
     const [order, setOrder] = useState({});
     const [file, setFile] = useState(null);
     const handleBlur = e => {
@@ -17,7 +18,8 @@ const Order = () => {
         const newFile = e.target.files[0];
         setFile(newFile);
     }
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         const formData = new FormData()
         console.log(order);
         formData.append('file', file);
@@ -33,7 +35,10 @@ const Order = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                if (data) {
+                    alert("order send")
+                }
+
             })
             .catch(error => {
                 console.error(error)
@@ -56,16 +61,18 @@ const Order = () => {
                     <form onSubmit={handleSubmit}
                         style={{ position: "absolute", marginRight: '20px', backgroundColor: "#F4FDFB" }}>
                         <div class="form-group">
-                            <input type="text"
+                            <input type="text" value={loggedInUser.fetchService}
                                 onBlur={handleBlur}
                                 class="form-control" name="name" placeholder="Your name / company's name" />
                         </div>
                         <div class="form-group">
-                            {loggedInUser && <input type="email"
+                            {/* {loggedInUser && */}
+                            <input type="email"
                                 onBlur={handleBlur}
                                 class="form-control" name="email"
-                                value={loggedInUser.email}
-                                placeholder="Your email address" />}
+                                // value={loggedInUser.email}
+                                placeholder="Your email address" />
+                            {/* // } */}
                         </div>
                         <div class="form-group">
                             <input type="text"
