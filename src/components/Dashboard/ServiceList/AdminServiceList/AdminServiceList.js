@@ -6,7 +6,7 @@ const AdminServiceList = () => {
     const [orders, setOrders] = useState([])
     console.log(orders);
     useEffect(() => {
-        fetch('http://localhost:5000/totalorders')
+        fetch('https://secret-reef-66767.herokuapp.com/totalorders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])

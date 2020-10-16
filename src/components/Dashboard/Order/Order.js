@@ -27,7 +27,7 @@ const Order = () => {
         formData.append('description', order.description);
         formData.append('price', order.price);
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://secret-reef-66767.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })

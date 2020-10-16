@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './ServiceDetails.css';
 const ServiceDetails = ({ service }) => {
 
     return (
         <div className="col-md-4 d-flex justify-content-center">
-            <div style={{ width: "18rem" }} className="card shadow-sm mt-5">
+            <div style={{ width: "18rem" }} className="card animation shadow-sm mt-5">
                 <Link style={{ textDecoration: 'none' }}
                     to='/addOrder'>
                     <div className="card-header d-flex">

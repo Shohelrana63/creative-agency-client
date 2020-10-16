@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import './AddService.css';
 import icon from '../../../images/cloudUpload.png';
+import { UserContext } from '../../../App';
 
 const AddService = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [adminInfo, setAdminInfo] = useState({})
     const [file, setFile] = useState(null)
     // console.log(adminInfo);
@@ -13,7 +15,7 @@ const AddService = () => {
         formData.append('file', file);
         formData.append('title', adminInfo.title);
         formData.append('description', adminInfo.description);
-        fetch('http://localhost:5000/addService', {
+        fetch('https://secret-reef-66767.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })
@@ -38,9 +40,10 @@ const AddService = () => {
             <div className="col-md-4">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-md-5">
-                <div className="col-md-10 " >
+            <div className="col-md-7">
+                <div className="col-md-10" >
                     <h5 className="mb-5 pt-4 pb-5 pl-2">Add Services</h5>
+
                     <form onSubmit={handleSubmit} style={{ position: "absolute", marginRight: '20px', backgroundColor: "#F4FDFB" }}>
                         <div class="form-group d-flex">
                             <div class="form-group">

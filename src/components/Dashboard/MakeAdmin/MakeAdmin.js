@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
 
 const MakeAdmin = () => {
-    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
     const [admin, setAdmin] = useState({})
     const handleBlur = (e) => {
         const newAdmin = { ...admin };
@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:5000/setAdmin', {
+        fetch('https://secret-reef-66767.herokuapp.com/setAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(admin)

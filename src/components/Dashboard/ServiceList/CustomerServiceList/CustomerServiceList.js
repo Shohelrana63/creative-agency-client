@@ -24,7 +24,7 @@ const CustomerServiceList = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://secret-reef-66767.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
