@@ -18,4 +18,5 @@ Technology: React, React-router, Bootstrap, Node.js, MongoDB, Firebase, Express.
 
 Live Website: https://creative-agency-srbaig.web.app/
 
+[My Resume](https://drive.google.com/file/d/1tdv1Vq_K6fNrUa9ZZ-QHrzhM0PPSgRH_/view?usp=sharing)
 
