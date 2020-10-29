@@ -4,6 +4,10 @@ I am a highly passionate, enthusiastic, hardworking and dedicated learner. Self-
 
 [![Shohel github stats](https://github-readme-stats.vercel.app/api?username=Shohelrana63)](https://github.com/anuraghazra/github-readme-stats)
 
+[Live Site](https://creative-agency-srbaig.web.app/)
+
+[My Resume](https://drive.google.com/file/d/1tdv1Vq_K6fNrUa9ZZ-QHrzhM0PPSgRH_/view?usp=sharing)
+
 Overview:
 
 •	Creative Agency is a Full-Stack Web Application. Here Customers can order any services .
@@ -17,7 +21,4 @@ Overview:
 
 Technology: React, React-router, Bootstrap, Node.js, MongoDB, Firebase, Express.js, Heroku
 
-Live Website: https://creative-agency-srbaig.web.app/
-
-[My Resume](https://drive.google.com/file/d/1tdv1Vq_K6fNrUa9ZZ-QHrzhM0PPSgRH_/view?usp=sharing)
 
